@@ -1,7 +1,8 @@
 <?php
 
-$nom = "Sara";
-$age = 21;
+$nom = "Adil";
+$age = 22;
+$ville ="Marrakech";
 
 ?>
 
@@ -15,7 +16,8 @@ $age = 21;
 
 <body>
 
-    <h1>Mon profil</h1>
+    <h1>Mon profil</h1><br><hr>
+    <h2>Informations personnelles</h2> 
 
     <p>
         Bonjour
@@ -27,6 +29,8 @@ $age = 21;
         <?php echo $age; ?>
         ans.
     </p>
+
+    <p> J'habite a <?php echo $ville; ?> </P>
 
 </body>
 
