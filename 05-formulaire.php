@@ -4,19 +4,23 @@ $produit = "";
 $prix = "";
 $quantite = "";
 $message = "";
+$categorie ="";
 
 if (
     isset($_POST["produit"])
     && isset($_POST["prix"])
     && isset($_POST["quantite"])
+    &&isset($_POST["categorie"])
 ) {
 
     $produit = $_POST["produit"];
     $prix = $_POST["prix"];
     $quantite = $_POST["quantite"];
+    $categorie = $_POST["categorie"];
 
     if (
         $produit != ""
+        &&categorie != ""
         && $prix > 0
         && $quantite > 0
     ) {
@@ -67,6 +71,23 @@ if (
             >
 
         </div>
+
+<div>
+
+            <label for="categorie">
+               Categorie du produit :
+            </label>
+
+            <input
+                type="text"
+                id="categorie"
+                name="categorie"
+                required
+            >
+
+        </div>
+
+
 
         <br>
 
@@ -141,6 +162,12 @@ if (
             Produit :
             <?php echo htmlspecialchars($produit); ?>
         </p>
+        <br>
+        <p>
+            Categorie :
+            <?php echo htmlspecialchars($categorie); ?>
+        </p>
+
 
         <p>
             Prix :
