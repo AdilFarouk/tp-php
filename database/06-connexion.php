@@ -17,6 +17,9 @@ try {
         PDO::ATTR_ERRMODE,
         PDO::ERRMODE_EXCEPTION
     );
+ echo "Connexion a la base de donne tp-php reussite !<br> ";
+ echo"Bravo vous avez reussit a les connectee";
+;
 
 } catch (PDOException $e) {
 
