@@ -26,7 +26,7 @@ $products = $statement->fetchAll(
 
 <body>
 
-    <h1>Liste des produits</h1>
+    <h1>List of our Products</h1>
 
     <?php
 
@@ -87,6 +87,36 @@ $products = $statement->fetchAll(
 </body>
 
 </html>
+
+
+
+
+
+<table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prix (DH)</th>
+                <th>Quantité</th>
+                <th>Total stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($products as $product): ?>
+                <?php
+                
+                $totalStock = $product['price'] * $product['quantity'];
+                ?>
+                <tr>
+                
+                    <td><?php echo htmlspecialchars($product['name']); ?></td>
+                    <td><?php echo htmlspecialchars($product['price']); ?> DH</td>
+                    <td><?php echo htmlspecialchars($product['quantity']); ?></td>
+                    <td><?php echo htmlspecialchars($totalStock); ?> DH</td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 
 
 
